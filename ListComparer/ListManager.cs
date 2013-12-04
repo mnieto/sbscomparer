@@ -141,7 +141,8 @@ namespace ListComparer {
         /// <param name="fillOptions"></param>
         public void ResetSettings(FillOptions fillOptions) {
             FillOptions = fillOptions;
-            Lists.ForEach(x => x.Reset(fillOptions));
+            //Lists.ForEach(x => x.Reset(fillOptions));
+            Lists.Clear();
         }
 
         #region IEnumerable<ListGroup> Members

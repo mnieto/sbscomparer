@@ -73,6 +73,15 @@ namespace SideBySide {
         }
 
         /// <summary>
+        /// Return <c>true</c> if settings changes are incompatible with current settings and should reset existing data
+        /// </summary>
+        /// <param name="numColumns">New number of columns per list</param>
+        private bool ChangesRequireResetData(int numColumns) {
+            return (numColumns != ListManager.FillOptions.NumColumns || 
+                useFirshtRowAsHeaderCheckBox.Checked != ListManager.FillOptions.UseFirstRowAsHeaders);
+        }
+
+        /// <summary>
         /// Create a new tab, with the associated grid and add the corresponding list to ListManager
         /// </summary>
         /// <param name="i"></param>
@@ -169,7 +178,7 @@ namespace SideBySide {
             int numLists = int.Parse(numListTextBox.TextBoxText);
             int numColumns = int.Parse(numColumnsTextBox.TextBoxText);
 
-            if (!CheckListManagerHasData())
+            if (ChangesRequireResetData(numColumns) && !CheckListManagerHasData())
                 return;
 
             //Redefine the fill options with the configuration selected by the user (the number of data lists do not change here)
