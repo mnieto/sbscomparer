@@ -1,8 +1,0 @@
-E:\mnieto\Documents\Proyectos\SBSComparer\ListComparer\bin\Debug\ListComparer.dll
-E:\mnieto\Documents\Proyectos\SBSComparer\ListComparer\bin\Debug\ListComparer.pdb
-E:\mnieto\Documents\Proyectos\SBSComparer\ListComparer\obj\Debug\ResolveAssemblyReference.cache
-E:\mnieto\Documents\Proyectos\SBSComparer\ListComparer\obj\Debug\ListComparer.Properties.Resources.resources
-E:\mnieto\Documents\Proyectos\SBSComparer\ListComparer\obj\Debug\GenerateResource.read.1.tlog
-E:\mnieto\Documents\Proyectos\SBSComparer\ListComparer\obj\Debug\GenerateResource.write.1.tlog
-E:\mnieto\Documents\Proyectos\SBSComparer\ListComparer\obj\Debug\ListComparer.dll
-E:\mnieto\Documents\Proyectos\SBSComparer\ListComparer\obj\Debug\ListComparer.pdb
