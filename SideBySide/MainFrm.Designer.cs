@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.editPanel = new System.Windows.Forms.RibbonPanel();
@@ -215,6 +216,7 @@
             this.ClientSize = new System.Drawing.Size(792, 328);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.ribbon1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainFrm";
             this.Text = "Side by Side comparer";
             this.ResumeLayout(false);
