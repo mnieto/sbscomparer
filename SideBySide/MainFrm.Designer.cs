@@ -106,6 +106,7 @@
             this.listManagementPanel.Items.Add(this.ribbonSeparator1);
             this.listManagementPanel.Items.Add(this.applyButton);
             this.listManagementPanel.Text = "List management";
+            this.listManagementPanel.ButtonMoreClick += new System.EventHandler(this.listManagementPanel_ButtonMoreClick);
             // 
             // numListTextBox
             // 

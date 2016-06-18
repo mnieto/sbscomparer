@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ListComparer {
 
-    public class FillOptions {
+    public class FillOptions : ICloneable {
 
         /// <summary>
         /// For internal use only: Separator char for columns headers
@@ -40,6 +40,11 @@ namespace ListComparer {
         public bool UseFirstRowAsHeaders { get; set; }
 
         /// <summary>
+        /// List of column definitions
+        /// </summary>
+        public List<ColumDef> Columns { get; private set; }
+
+        /// <summary>
         /// Default constructor. Initialize properties to their default values
         /// </summary>
         public FillOptions() {
@@ -48,7 +53,29 @@ namespace ListComparer {
             NumColumns = 1;
             UseFirstRowAsHeaders = true;
             InferNumColumns = true;
+            Columns = new List<ColumDef>();
         }
+
+
+        public void CopyTo(FillOptions another) {
+            another.HeaderSeparator = HeaderSeparator;
+            another.SeparatorChars = SeparatorChars;
+            another.NumColumns = NumColumns;
+            another.UseFirstRowAsHeaders = UseFirstRowAsHeaders;
+            another.InferNumColumns = InferNumColumns;
+            another.Columns.Clear();
+            Columns.ForEach(x => another.Columns.Add(x));
+        }
+
+        #region ICloneable Members
+
+        public object Clone() {
+            FillOptions clon = (FillOptions)this.MemberwiseClone();
+            clon.Columns = this.Columns.Select(x => (ColumDef)x.Clone()).ToList();
+            return clon;
+        }
+
+        #endregion
     }
 }
 

@@ -238,5 +238,19 @@ namespace SideBySide {
             ExportBase.Open(fileName);
         }
 
+        private void listManagementPanel_ButtonMoreClick(object sender, EventArgs e) {
+            ListsConfigurationFrm frm = new ListsConfigurationFrm(ListManager.NumberOfLists, ListManager.FillOptions);
+            if (frm.ShowDialog() == DialogResult.OK) {
+                if (ChangesRequireResetData(frm.FillOptions.NumColumns) && !CheckListManagerHasData())
+                    return;
+                frm.FillOptions.CopyTo(ListManager.FillOptions);
+                AdjustNumberOfLists(frm.NumberOfLists);
+
+                numListTextBox.TextBoxText = ListManager.NumberOfLists.ToString();
+                numColumnsTextBox.TextBoxText = ListManager.FillOptions.NumColumns.ToString();
+                useFirshtRowAsHeaderCheckBox.Checked = ListManager.FillOptions.UseFirstRowAsHeaders;
+
+            }
+        }
     }
 }

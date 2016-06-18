@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColumDef.cs" />
     <Compile Include="FillOptions.cs" />
     <Compile Include="DataList.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

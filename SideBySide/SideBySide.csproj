@@ -57,6 +57,12 @@
     <Compile Include="ExportTo\ExportToFactory.cs" />
     <Compile Include="ExportTo\ExportBase.cs" />
     <Compile Include="ExportTo\ToText.cs" />
+    <Compile Include="ListsConfigurationFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListsConfigurationFrm.Designer.cs">
+      <DependentUpon>ListsConfigurationFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ListsConfigurationFrm.resx">
+      <DependentUpon>ListsConfigurationFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +88,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\ListComparer.ColumDef.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
