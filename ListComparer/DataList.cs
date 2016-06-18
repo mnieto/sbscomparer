@@ -162,7 +162,14 @@ namespace ListComparer {
                 throw new InvalidOperationException(message);
             }
             for (int i = 0; i < columns.Length; i++) {
-                string colName = FillOptions.UseFirstRowAsHeaders ? columns[i] : String.Format(Resources.ColumnNo, i + 1);
+                string colName = null;
+                if (FillOptions.UseFirstRowAsHeaders) {
+                    colName = columns[i];
+                } else if (FillOptions.Columns.Count > i) {
+                    colName = FillOptions.Columns[i].Name;
+                } else {
+                    colName = String.Format(Resources.ColumnNo, i + 1);
+                }
                 Data.Columns.Add(colName);
             }
             FillOptions.NumColumns = columns.Length;
