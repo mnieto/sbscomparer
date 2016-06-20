@@ -204,8 +204,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(447, 173);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_UpdateColumnsCount);
-            this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
             this.dataGridView1.Validating += new System.ComponentModel.CancelEventHandler(this.dataGridView1_Validating);
             // 
             // okButton
@@ -233,6 +231,7 @@
             // bindingSource1
             // 
             this.bindingSource1.DataSource = typeof(ListComparer.ColumDef);
+            this.bindingSource1.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.bindingSource1_ListChanged);
             // 
             // colName
             // 

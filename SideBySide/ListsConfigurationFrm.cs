@@ -103,12 +103,10 @@ namespace SideBySide {
                 e.Cancel = true;
         }
 
-        private void dataGridView1_UpdateColumnsCount(object sender, DataGridViewRowsAddedEventArgs e) {
-            FillOptions.NumColumns = dataGridView1.Rows.Count;
-        }
-
-        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e) {
-            FillOptions.NumColumns -= e.RowCount;
+        private void bindingSource1_ListChanged(object sender, ListChangedEventArgs e) {
+            var source = bindingSource1.DataSource as List<ColumDef>;
+            if (source != null)
+                FillOptions.NumColumns = source.Count;
         }
     }
 }
