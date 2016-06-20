@@ -150,8 +150,14 @@ namespace ListComparer {
         /// <param name="row"></param>
         /// <returns></returns>
         public string GetKey(DataRow row) {
-            //TODO: Allow to sort by an arbitrary set of columns
-            return row[0].ToString();
+            var keyNames = FillOptions.Columns.Where(x => x.IsKey).Select(x => x.Name);
+            if (keyNames == null || keyNames.Count() == 0)
+                return row[0].ToString();
+            string key = String.Empty;
+            foreach (string name in keyNames) {
+                key += row[name].ToString();
+            }
+            return key;
         }
 
         private void CreateColumns(string line) {
