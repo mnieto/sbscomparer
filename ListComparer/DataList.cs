@@ -130,8 +130,10 @@ namespace ListComparer {
         /// </summary>
         public void Sort() {
             DataView dv = Data.DefaultView;
-            //TODO: Allow to sort by an arbitrary set of columns
-            dv.Sort = Data.Columns[0].ColumnName;
+            var keyNames = FillOptions.Columns.Where(x => x.IsKey).Select(x => x.Name);
+            dv.Sort = string.Join(", ", keyNames);
+            if (dv.Sort == string.Empty)
+                dv.Sort = Data.Columns[0].ColumnName;
             Data = dv.ToTable();
         }
 
