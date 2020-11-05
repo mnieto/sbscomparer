@@ -14,7 +14,7 @@ namespace SideBySide.ExportTo {
                 case "txt":
                     return new ToText(options);
                 case "xlsx":
-                    return new ToText(options);
+                    return new ToExcel(options);
                 default:
                     throw new ArgumentException(Resources.NotSupportedFormat, "fileExtension");
             }
